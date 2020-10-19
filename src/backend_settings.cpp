@@ -14,6 +14,7 @@ const QString SettingsKeyDate = "date";
 const QString SettingsKeyIntensityFrame = "intensity/frame";
 const QString SettingsKeyIntensityShift = "intensity/shift";
 const QString SettingsKeyIntensitySmoothFrame = "intensity/smoothFrame";
+const QString SettingsKeyIntensityDoubleSmoothFrame = "intensity/doubleSmoothFrame";
 const QString SettingsKeySegmentsByIntensityMinimumLength = "segmentsByIntensity/minimumLength";
 const QString SettingsKeySegmentsByIntensityThresholdAbsolute = "segmentsByIntensity/thresholdAbsolute";
 const QString SettingsKeySegmentsByIntensityThresholdRelative = "segmentsByIntensity/thresholdRelative";
@@ -44,6 +45,9 @@ void Backend::loadFromFile(IntonCore::Config *config)
         );
         config->setIntensitySmoothFrame(
             settings.value(SettingsKeyIntensitySmoothFrame).toUInt()
+        );
+        config->setIntensityDoubleSmoothFrame(
+            settings.value(SettingsKeyIntensityDoubleSmoothFrame).toUInt()
         );
         config->setSegmentsByIntensityMinimumLength(
             settings.value(SettingsKeySegmentsByIntensityMinimumLength).toUInt()
@@ -77,6 +81,10 @@ void Backend::saveToFile(IntonCore::Config *config)
     settings.setValue(
         SettingsKeyIntensitySmoothFrame,
         config->intensitySmoothFrame()
+    );
+    settings.setValue(
+        SettingsKeyIntensityDoubleSmoothFrame,
+        config->intensityDoubleSmoothFrame()
     );
     settings.setValue(
         SettingsKeySegmentsByIntensityMinimumLength,
@@ -129,6 +137,19 @@ void Backend::setIntensitySmoothFrame(QVariant value)
 {
     IntonCore::Config * config = this->getConfig();
     config->setIntensitySmoothFrame(value.toUInt());
+    this->saveToFile(config);
+}
+
+QVariant Backend::getIntensityDoubleSmoothFrame()
+{
+    IntonCore::Config * config = this->getConfig();
+    return config->intensityDoubleSmoothFrame();
+}
+
+void Backend::setIntensityDoubleSmoothFrame(QVariant value)
+{
+    IntonCore::Config * config = this->getConfig();
+    config->setIntensityDoubleSmoothFrame(value.toUInt());
     this->saveToFile(config);
 }
 

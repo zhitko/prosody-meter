@@ -9,6 +9,7 @@ Page {
     property alias intensitySmoothFrameValue: intensitySmoothFrameValue
     property alias intensityShiftValue: intensityShiftValue
     property alias intensityMaxLengthValue: intensityMaxLengthValue
+    property alias intensityDoubleSmoothFrameValue: intensityDoubleSmoothFrameValue
     title: qsTr("Settings")
 
     ScrollView {
@@ -74,6 +75,19 @@ Page {
                     }
 
                     Text {
+                        id: intensityDoubleSmoothFrameTitle
+                        text: qsTr("Second Smooth Frame")
+                        font.pointSize: 12
+                    }
+
+                    SpinBox {
+                        id: intensityDoubleSmoothFrameValue
+                        to: 1024
+                        wheelEnabled: true
+                        editable: true
+                    }
+
+                    Text {
                         id: intensityMaxLengthTitle
                         text: qsTr("Segment length limit (millisec)")
                         font.pointSize: 12
@@ -93,7 +107,7 @@ Page {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_height:200;anchors_width:200}
+    D{i:0;autoSize:true;height:480;width:640}D{i:1}
 }
 ##^##*/
 

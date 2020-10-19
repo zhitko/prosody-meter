@@ -36,6 +36,7 @@ public:
     // Intensity API
     Q_INVOKABLE QVariantList getIntensity(QString path);
     Q_INVOKABLE QVariantList getIntensitySmoothed(QString path);
+    Q_INVOKABLE QVariantList getIntensityDoubleSmoothed(QString path);
 
     // Segments API
     Q_INVOKABLE QVariantList getSegmentsP(QString path);
@@ -66,6 +67,8 @@ public:
     Q_INVOKABLE void setIntensityShift(QVariant value);
     Q_INVOKABLE QVariant getIntensitySmoothFrame();
     Q_INVOKABLE void setIntensitySmoothFrame(QVariant value);
+    Q_INVOKABLE QVariant getIntensityDoubleSmoothFrame();
+    Q_INVOKABLE void setIntensityDoubleSmoothFrame(QVariant value);
     Q_INVOKABLE QVariant getIntensityMaxLengthValue();
     Q_INVOKABLE void setIntensityMaxLengthValue(QVariant value);
     Q_INVOKABLE QVariant getSegmentsByIntensityMinimumLength();

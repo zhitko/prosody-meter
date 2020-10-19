@@ -20,23 +20,24 @@ Page {
     property alias fullWaveMouseArea: fullWaveMouseArea
     property alias intensitySeries: intensitySeries
     property alias intensitySmoothedSeries: intensitySmoothedSeries
+    property alias intensityDoubleSmoothedSeries: intensityDoubleSmoothedSeries
     property alias showManualSegments: showManualSegments
     property alias recordButton: recordButton
-    property alias recordLengthValue: recordLengthValue
-    property alias vowelsCountValue: vowelsCountValue
-    property alias vowelsRateValue: vowelsRateValue
-    property alias consonantsAndSilenceLengthValue: consonantsAndSilenceLengthValue
-    property alias segmentsMaskSeries: segmentsMaskSeries
-    property alias segmentsMaskX: segmentsMaskX
-    property alias segmentsMaskY: segmentsMaskY
     property alias testSeries: testSeries
     property alias testSeriesX: testSeriesX
     property alias testSeriesY: testSeriesY
-    property alias vowelsMeanValue: vowelsMeanValue
+    property alias segmentsMaskSeries: segmentsMaskSeries
+    property alias segmentsMaskX: segmentsMaskX
+    property alias segmentsMaskY: segmentsMaskY
+    property alias consonantsAndSilenceLengthValue: consonantsAndSilenceLengthValue
     property alias consonantsAndSilenceCountValue: consonantsAndSilenceCountValue
-    property alias vowelsLengthValue: vowelsLengthValue
     property alias consonantsAndSilenceMeanValue: consonantsAndSilenceMeanValue
     property alias consonantsAndSilenceMedianValue: consonantsAndSilenceMedianValue
+    property alias recordLengthValue: recordLengthValue
+    property alias vowelsCountValue: vowelsCountValue
+    property alias vowelsRateValue: vowelsRateValue
+    property alias vowelsMeanValue: vowelsMeanValue
+    property alias vowelsLengthValue: vowelsLengthValue
     property alias vowelsMedianValue: vowelsMedianValue
     title: qsTr("Wave file")
 
@@ -81,15 +82,25 @@ Page {
             }
 
             Switch {
+                id: showIntensityDoubleSmoothed
+                text: qsTr("Double Smoothed Intensity")
+            }
+
+            Switch {
                 id: showManualSegments
                 text: qsTr("Manual Segments")
+            }
+
+            Switch {
+                id: showSecondGraph
+                text: qsTr("Detailed Graph")
                 Layout.fillWidth: true
             }
         }
 
         ChartView {
             id: fullWave
-            height: root.height * 0.4
+            height: showSecondGraph.checked ? root.height * 0.4 : root.height * 0.6
             anchors.right: parent.right
             anchors.rightMargin: 10
             anchors.left: parent.left
@@ -124,6 +135,16 @@ Page {
                 width: 2
                 color: Colors.raspberry
                 visible: showIntensitySmoothed.checked
+            }
+
+            LineSeries {
+                id: intensityDoubleSmoothedSeries
+                name: qsTr("Intensity double smoothed")
+                axisY: fullWaveSeriesY
+                axisX: fullWaveSeriesX
+                width: 2
+                color: Colors.varmillion
+                visible: showIntensityDoubleSmoothed.checked
             }
 
             LineSeries {
@@ -191,7 +212,7 @@ Page {
 
         ChartView {
             id: segmantWave
-            height: root.height * 0.4
+            height: showSecondGraph.checked ? root.height * 0.4 : 0
             anchors.right: parent.right
             anchors.rightMargin: 10
             anchors.left: parent.left

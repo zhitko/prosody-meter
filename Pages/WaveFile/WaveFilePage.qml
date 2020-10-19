@@ -63,6 +63,13 @@ WaveFilePageForm {
         addDataToSeries(intensitySmoothedSeries, data)
     }
 
+    function loadIntensityDoubleSmoothed() {
+        console.log("Load Double Smoothed Intensity data")
+        var data = backend.getIntensityDoubleSmoothed(root.path)
+
+        addDataToSeries(intensityDoubleSmoothedSeries, data)
+    }
+
     function loadSegmentedWave() {
         console.log("Load segmented Wave data")
         var data = backend.getWaveSegmantData(root.path, startPoint, endPoint)
@@ -211,6 +218,7 @@ WaveFilePageForm {
         setStartStopPosition(segmentsByIntensity);
         loadIntensity()
         loadIntensitySmoothed()
+        loadIntensityDoubleSmoothed()
         loadSegmentedWave()
         loadSegmentsMask()
         loadMetrics()

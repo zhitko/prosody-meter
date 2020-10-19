@@ -135,6 +135,25 @@ QVariantList Backend::getIntensitySmoothed(QString path)
     return intensityData;
 }
 
+QVariantList Backend::getIntensityDoubleSmoothed(QString path)
+{
+    this->initializeCore(path);
+
+    auto storage = this->core->getTemplate();
+
+    auto data = storage->getIntensityNormalizedDoubleSmoothed();
+    auto resized_data = IntonCore::resizeVector(data, WAVE_LENGTH);
+    qDebug() << "Intensity double smoothed size " << data.size();
+
+    QVariantList intensityData;
+
+    for (ulong i=0; i<resized_data.size(); i++) {
+        intensityData.append(QVariant::fromValue(QmlPoint(i, resized_data[i])));
+    }
+
+    return intensityData;
+}
+
 QVariantList Backend::getWaveSegmantData(QString path, double from_percent, double to_percent)
 {
     this->initializeCore(path);
@@ -388,7 +407,6 @@ QVariant Backend::getVowelsCount(QString path, double from_percent, double to_pe
     int count = 0;
     for (auto &it: segments)
     {
-        qDebug() << "Segment first: " << it.first;
         if ( from < (it.first+it.second) && (it.first) < to )
         {
             count++;
