@@ -52,6 +52,8 @@ public:
     Q_INVOKABLE QVariant getVowelsLength(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getConsonantsAndSilenceCount(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getConsonantsAndSilenceLength(QString path, double from_percent, double to_percent);
+    Q_INVOKABLE QVariant getSilenceCount(QString path, double from_percent, double to_percent);
+    Q_INVOKABLE QVariant getSilenceLength(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getVowelsCount(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getSegmentsVariance(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getVowelsMeanValue(QString path, double from_percent, double to_percent);

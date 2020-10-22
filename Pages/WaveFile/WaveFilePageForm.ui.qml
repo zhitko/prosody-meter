@@ -39,6 +39,8 @@ Page {
     property alias vowelsMeanValue: vowelsMeanValue
     property alias vowelsLengthValue: vowelsLengthValue
     property alias vowelsMedianValue: vowelsMedianValue
+    property alias silenceLengthValue: silenceLengthValue
+    property alias silenceCountValue: silenceCountValue
     title: qsTr("Wave file")
 
     ValueAxis {
@@ -338,6 +340,32 @@ Page {
 
                 Text {
                     id: consonantsAndSilenceCountValue
+                    text: "---"
+                    font.pointSize: 12
+                }
+
+                Text {
+                    id: silenceLengthTitle
+                    text: qsTr("Silence Length")
+                    font.bold: true
+                    font.pointSize: 12
+                }
+
+                Text {
+                    id: silenceLengthValue
+                    text: "---"
+                    font.pointSize: 12
+                }
+
+                Text {
+                    id: silenceCountTitle
+                    text: qsTr("Silence Count")
+                    font.bold: true
+                    font.pointSize: 12
+                }
+
+                Text {
+                    id: silenceCountValue
                     text: "---"
                     font.pointSize: 12
                 }

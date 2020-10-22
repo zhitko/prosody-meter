@@ -391,6 +391,26 @@ QVariant Backend::getConsonantsAndSilenceLength(QString path, double from_percen
     return QVariant::fromValue(storage->convertIntensityPointsToSec(count));
 }
 
+QVariant Backend::getSilenceCount(QString path, double from_percent, double to_percent)
+{
+    this->initializeCore(path);
+
+    auto storage = this->core->getTemplate();
+    auto count = storage->getSilenceCount();
+
+    return QVariant::fromValue(count);
+}
+
+QVariant Backend::getSilenceLength(QString path, double from_percent, double to_percent)
+{
+    this->initializeCore(path);
+
+    auto storage = this->core->getTemplate();
+    auto length = storage->getSilenceLength();
+
+    return QVariant::fromValue( storage->convertIntensityPointsToSec(length));
+}
+
 QVariant Backend::getVowelsCount(QString path, double from_percent, double to_percent)
 {
     this->initializeCore(path);

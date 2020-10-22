@@ -20,32 +20,37 @@
 <context>
     <name>SettingsPageForm.ui</name>
     <message>
-        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="12"/>
+        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="13"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="31"/>
+        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="32"/>
         <source>Intensity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="39"/>
+        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="40"/>
         <source>Frame</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="52"/>
+        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="53"/>
         <source>Shift</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="65"/>
+        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="66"/>
         <source>Smooth Frame</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="78"/>
+        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="79"/>
+        <source>Second Smooth Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Pages/Settings/SettingsPageForm.ui.qml" line="92"/>
         <source>Segment length limit (millisec)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -53,18 +58,18 @@
 <context>
     <name>WaveFilePage</name>
     <message>
-        <location filename="Pages/WaveFile/WaveFilePage.qml" line="193"/>
-        <location filename="Pages/WaveFile/WaveFilePage.qml" line="206"/>
+        <location filename="Pages/WaveFile/WaveFilePage.qml" line="199"/>
+        <location filename="Pages/WaveFile/WaveFilePage.qml" line="212"/>
         <source>Nuclea</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Pages/WaveFile/WaveFilePage.qml" line="201"/>
+        <location filename="Pages/WaveFile/WaveFilePage.qml" line="207"/>
         <source>Pre-nuclea</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Pages/WaveFile/WaveFilePage.qml" line="211"/>
+        <location filename="Pages/WaveFile/WaveFilePage.qml" line="217"/>
         <source>Post-nuclea</source>
         <translation type="unfinished"></translation>
     </message>
@@ -154,36 +159,46 @@
     </message>
     <message>
         <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="347"/>
-        <source>Consonants &amp; Silence Mean Duration</source>
+        <source>Silence Length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="360"/>
-        <source>Consonants &amp; Silence Median Duration</source>
+        <source>Silence Count</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="373"/>
-        <source>Vowels Length</source>
+        <source>Consonants &amp; Silence Mean Duration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="386"/>
-        <source>Vowels Count</source>
+        <source>Consonants &amp; Silence Median Duration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="399"/>
-        <source>Vowels Mean Duration</source>
+        <source>Vowels Length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="412"/>
-        <source>Vowels Median Duration</source>
+        <source>Vowels Count</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="425"/>
+        <source>Vowels Mean Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="438"/>
+        <source>Vowels Median Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Pages/WaveFile/WaveFilePageForm.ui.qml" line="451"/>
         <source>Vowels Speaking Rate</source>
         <translation type="unfinished"></translation>
     </message>

@@ -153,6 +153,12 @@ WaveFilePageForm {
         let consonantsAndSilenceCount = backend.getConsonantsAndSilenceCount(root.path, startPoint, endPoint)
         consonantsAndSilenceCountValue.text = String(consonantsAndSilenceCount)
 
+        let silenceLength = backend.getSilenceLength(root.path, startPoint, endPoint)
+        silenceLengthValue.text = String(silenceLength.toFixed(2))
+
+        let silenceCount = backend.getSilenceCount(root.path, startPoint, endPoint)
+        silenceCountValue.text = String(silenceCount)
+
         let vowelsMean = backend.getVowelsMeanValue(root.path, startPoint, endPoint)
         vowelsMeanValue.text = String(vowelsMean.toFixed(2))
 
