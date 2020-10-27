@@ -41,6 +41,8 @@ Page {
     property alias vowelsMedianValue: vowelsMedianValue
     property alias silenceLengthValue: silenceLengthValue
     property alias silenceCountValue: silenceCountValue
+    property alias silenceMeanValue: silenceMeanValue
+    property alias silenceMedianValue: silenceMedianValue
     title: qsTr("Wave file")
 
     ValueAxis {
@@ -145,7 +147,7 @@ Page {
                 axisY: fullWaveSeriesY
                 axisX: fullWaveSeriesX
                 width: 2
-                color: Colors.varmillion
+                color: Colors.blue
                 visible: showIntensityDoubleSmoothed.checked
             }
 
@@ -345,6 +347,32 @@ Page {
                 }
 
                 Text {
+                    id: consonantsAndSilenceMeanTitle
+                    text: qsTr("Consonants & Silence Mean Duration")
+                    font.bold: true
+                    font.pointSize: 12
+                }
+
+                Text {
+                    id: consonantsAndSilenceMeanValue
+                    text: "---"
+                    font.pointSize: 12
+                }
+
+                Text {
+                    id: consonantsAndSilenceMedianTitle
+                    text: qsTr("Consonants & Silence Median Duration")
+                    font.bold: true
+                    font.pointSize: 12
+                }
+
+                Text {
+                    id: consonantsAndSilenceMedianValue
+                    text: "---"
+                    font.pointSize: 12
+                }
+
+                Text {
                     id: silenceLengthTitle
                     text: qsTr("Silence Length")
                     font.bold: true
@@ -371,27 +399,27 @@ Page {
                 }
 
                 Text {
-                    id: consonantsAndSilenceMeanTitle
-                    text: qsTr("Consonants & Silence Mean Duration")
+                    id: silenceMeanTitle
+                    text: qsTr("Silence Mean Duration")
                     font.bold: true
                     font.pointSize: 12
                 }
 
                 Text {
-                    id: consonantsAndSilenceMeanValue
+                    id: silenceMeanValue
                     text: "---"
                     font.pointSize: 12
                 }
 
                 Text {
-                    id: consonantsAndSilenceMedianTitle
-                    text: qsTr("Consonants & Silence Median Duration")
+                    id: silenceMedianTitle
+                    text: qsTr("Silence Median Duration")
                     font.bold: true
                     font.pointSize: 12
                 }
 
                 Text {
-                    id: consonantsAndSilenceMedianValue
+                    id: silenceMedianValue
                     text: "---"
                     font.pointSize: 12
                 }

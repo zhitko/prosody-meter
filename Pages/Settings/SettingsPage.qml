@@ -15,10 +15,15 @@ SettingsPageForm {
         intensitySmoothFrameValue.value = backend.getIntensitySmoothFrame();
         intensityDoubleSmoothFrameValue.value = backend.getIntensityDoubleSmoothFrame();
         intensityMaxLengthValue.value = backend.getIntensityMaxLengthValue();
+        pausesMaxLengthValue.value = backend.getIntensityDoubleSmoothMaxLengthValue();
     }
 
     intensityMaxLengthValue.onValueChanged: {
         backend.setIntensityMaxLengthValue(intensityMaxLengthValue.value);
+    }
+
+    pausesMaxLengthValue.onValueChanged: {
+        backend.setIntensityDoubleSmoothMaxLengthValue(pausesMaxLengthValue.value);
     }
 
     intensityFrameValue.onValueChanged: {

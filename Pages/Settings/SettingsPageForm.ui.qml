@@ -10,6 +10,7 @@ Page {
     property alias intensityShiftValue: intensityShiftValue
     property alias intensityMaxLengthValue: intensityMaxLengthValue
     property alias intensityDoubleSmoothFrameValue: intensityDoubleSmoothFrameValue
+    property alias pausesMaxLengthValue: pausesMaxLengthValue
     title: qsTr("Settings")
 
     ScrollView {
@@ -99,6 +100,19 @@ Page {
                         wheelEnabled: true
                         editable: true
                     }
+
+                    Text {
+                        id: pausesMaxLengthTitle
+                        text: qsTr("Pauses length limit (millisec)")
+                        font.pointSize: 12
+                    }
+
+                    SpinBox {
+                        id: pausesMaxLengthValue
+                        to: 2000
+                        wheelEnabled: true
+                        editable: true
+                    }
                 }
             }
         }
@@ -107,7 +121,7 @@ Page {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:1}
+    D{i:0;autoSize:true;height:480;width:640}
 }
 ##^##*/
 

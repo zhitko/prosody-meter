@@ -16,6 +16,7 @@ const QString SettingsKeyIntensityShift = "intensity/shift";
 const QString SettingsKeyIntensitySmoothFrame = "intensity/smoothFrame";
 const QString SettingsKeyIntensityDoubleSmoothFrame = "intensity/doubleSmoothFrame";
 const QString SettingsKeySegmentsByIntensityMinimumLength = "segmentsByIntensity/minimumLength";
+const QString SettingsKeySegmentsByIntensityDoubleSmoothMinimumLength = "segmentsByIntensityDoubleSmooth/minimumLength";
 const QString SettingsKeySegmentsByIntensityThresholdAbsolute = "segmentsByIntensity/thresholdAbsolute";
 const QString SettingsKeySegmentsByIntensityThresholdRelative = "segmentsByIntensity/thresholdRelative";
 
@@ -51,6 +52,9 @@ void Backend::loadFromFile(IntonCore::Config *config)
         );
         config->setSegmentsByIntensityMinimumLength(
             settings.value(SettingsKeySegmentsByIntensityMinimumLength).toUInt()
+        );
+        config->setSegmentsByIntensityDoubleSmoothMinimumLength(
+            settings.value(SettingsKeySegmentsByIntensityDoubleSmoothMinimumLength).toUInt()
         );
         config->setSegmentsByIntensityThresholdAbsolute(
             settings.value(SettingsKeySegmentsByIntensityThresholdAbsolute).toDouble()
@@ -89,6 +93,10 @@ void Backend::saveToFile(IntonCore::Config *config)
     settings.setValue(
         SettingsKeySegmentsByIntensityMinimumLength,
         config->segmentsByIntensityMinimumLength()
+    );
+    settings.setValue(
+        SettingsKeySegmentsByIntensityDoubleSmoothMinimumLength,
+        config->segmentsByIntensityDoubleSmoothMinimumLength()
     );
     settings.setValue(
         SettingsKeySegmentsByIntensityThresholdAbsolute,
@@ -163,6 +171,19 @@ void Backend::setIntensityMaxLengthValue(QVariant value)
 {
     IntonCore::Config * config = this->getConfig();
     config->setSegmentsByIntensityMinimumLength(value.toUInt());
+    this->saveToFile(config);
+}
+
+QVariant Backend::getIntensityDoubleSmoothMaxLengthValue()
+{
+    IntonCore::Config * config = this->getConfig();
+    return config->segmentsByIntensityDoubleSmoothMinimumLength();
+}
+
+void Backend::setIntensityDoubleSmoothMaxLengthValue(QVariant value)
+{
+    IntonCore::Config * config = this->getConfig();
+    config->setSegmentsByIntensityDoubleSmoothMinimumLength(value.toUInt());
     this->saveToFile(config);
 }
 

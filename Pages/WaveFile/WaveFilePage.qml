@@ -162,14 +162,20 @@ WaveFilePageForm {
         let vowelsMean = backend.getVowelsMeanValue(root.path, startPoint, endPoint)
         vowelsMeanValue.text = String(vowelsMean.toFixed(2))
 
+        let vowelsMedianMedian = backend.getVowelsMedianValue(root.path, startPoint, endPoint)
+        vowelsMedianValue.text = String(vowelsMedianMedian)
+
         let consonantsAndSilenceMean = backend.getConsonantsAndSilenceMeanValue(root.path, startPoint, endPoint)
         consonantsAndSilenceMeanValue.text = String(consonantsAndSilenceMean.toFixed(2))
 
         let consonantsAndSilenceMedian = backend.getConsonantsAndSilenceMedianValue(root.path, startPoint, endPoint)
         consonantsAndSilenceMedianValue.text = String(consonantsAndSilenceMedian)
 
-        let vowelsMedianMedian = backend.getVowelsMedianValue(root.path, startPoint, endPoint)
-        vowelsMedianValue.text = String(vowelsMedianMedian)
+        let silenceMean = backend.getSilenceMeanValue(root.path, startPoint, endPoint)
+        silenceMeanValue.text = String(silenceMean.toFixed(2))
+
+        let silenceMedian = backend.getSilenceMedianValue(root.path, startPoint, endPoint)
+        silenceMedianValue.text = String(silenceMedian)
     }
 
     function setStartStopPosition(segmentsByIntensity)

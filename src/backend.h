@@ -60,6 +60,8 @@ public:
     Q_INVOKABLE QVariant getVowelsMedianValue(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getConsonantsAndSilenceMeanValue(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getConsonantsAndSilenceMedianValue(QString path, double from_percent, double to_percent);
+    Q_INVOKABLE QVariant getSilenceMeanValue(QString path, double from_percent, double to_percent);
+    Q_INVOKABLE QVariant getSilenceMedianValue(QString path, double from_percent, double to_percent);
     Q_INVOKABLE QVariant getVowelsRate(QString path, double from_percent, double to_percent);
 
     // Settings API
@@ -73,6 +75,8 @@ public:
     Q_INVOKABLE void setIntensityDoubleSmoothFrame(QVariant value);
     Q_INVOKABLE QVariant getIntensityMaxLengthValue();
     Q_INVOKABLE void setIntensityMaxLengthValue(QVariant value);
+    Q_INVOKABLE QVariant getIntensityDoubleSmoothMaxLengthValue();
+    Q_INVOKABLE void setIntensityDoubleSmoothMaxLengthValue(QVariant value);
     Q_INVOKABLE QVariant getSegmentsByIntensityMinimumLength();
     Q_INVOKABLE void setSegmentsByIntensityMinimumLength(QVariant value);
     Q_INVOKABLE QVariant getSegmentsByIntensityThresholdAbsolute();
